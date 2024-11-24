@@ -1,0 +1,12 @@
+>npx create-react-app dashboard
+>npm i apexcharts react-apexcharts axios jwt-decode
+>npm i moment react-hot-toast react-icons @reduxjs/toolkit react-redux
+>npm i react-spinners react-window redux-thunk socket.io-client
+
+>npm i install -D tailwindcss
+>npx tailwindcss init
+
+in index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
