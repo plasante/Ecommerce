@@ -5,6 +5,8 @@
 
 >npm i install -D tailwindcss
 >npx tailwindcss init
+>npm i react-router-dom
+
 
 in index.css
 @tailwind base;
