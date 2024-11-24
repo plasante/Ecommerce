@@ -40,7 +40,7 @@ const Register = () => {
                             Up
                         </button>
                         <div className={'flex items-center mb-3 gap-3 justify-center'}>
-                            <p>Already Have an account? <Link className={'font-bold'} to={'./login'}>Sign In</Link></p>
+                            <p>Already Have an account? <Link className={'font-bold'} to={'/login'}>Sign In</Link></p>
                         </div>
                         <div className={'w-full flex justify-center items-center mt-3'}>
                             <div className={'w-[45%] bg-slate-700 h-[1px]'}></div>
