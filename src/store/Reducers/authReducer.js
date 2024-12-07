@@ -10,7 +10,7 @@ export const admin_login = createAsyncThunk(
                 , {withCredentials: true})
             console.log(data);
         } catch (error) {
-
+            console.log(error.response.data);
         }
     }
 )
@@ -23,7 +23,9 @@ export const authReducer = createSlice({
         loader: false,
         userInfo: '',
     },
-    reducers: {},
+    reducers: {
+
+    },
     extraReducers: () => {
 
     }
