@@ -7,9 +7,9 @@ function App() {
   const [allRoutes, setAllRoutes] = useState([...publicRoutes]);
 
   useEffect(() => {
-    const routes = getRoutes()
-    setAllRoutes([...allRoutes, routes])
-  });
+    const route = getRoutes();
+    setAllRoutes(prev => [...prev, route]);
+  }, []);
 
   return <Router allRoutes={allRoutes}/>
 }
