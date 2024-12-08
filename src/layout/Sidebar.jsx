@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {getNav} from "../navigation/index";
 
 const Sidebar = () => {
 
+    const {pathname} = useLocation();
     const [allNav, setAllNav] = useState([]);
 
     useEffect(() => {
@@ -23,7 +24,28 @@ const Sidebar = () => {
                     </Link>
                 </div>
                 <div className={'px-[16px]'}>
-
+                    <ul>
+                        {
+                            allNav.map((nav, index) => (
+                                <li key={index}>
+                                    <span>{console.log(nav.path)}</span>
+                                    <span>{console.log(pathname)}</span>
+                                    <Link to={nav.path}
+                                          className={
+                                              `${pathname.includes(nav.path)
+                                                  ? 'bg-blue-600 shadow-indigo-500/50 text-white duration-500'
+                                                  : 'text-[#030811] font-bold duration-200'}
+                                                  px-[12px] py-[9px] rounded-sm flex justify-start items-center 
+                                                  gap-[12px] hover:pl-4  w-full mb-1`
+                                          }
+                                    >
+                                        <span>{nav.icon}</span>
+                                        <span>{nav.title}</span>
+                                    </Link>
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
             </div>
         </div>
