@@ -12,6 +12,27 @@ const Header = ({showSidebar, setShowSidebar}) => {
                'cursor-pointer'}>
           <span><FaList/></span>
         </div>
+        <div className={'hidden md:block'}>
+          <input className={'px-3 py-2 outline-none border bg-transparent' +
+            'border-slate-700 rounded-md text-[#cdcae9] focus:border-indigo-500 ' +
+            'overflow-hidden '}
+                 type="text"
+                 name="search"
+                 placeholder="Search..."/>
+        </div>
+        <div className={'flex justify-center items-center gap-8 relative'}>
+          <div className={'flex justify-center items-center'}>
+            <div className={'flex justify-center items-center gap-3'}>
+              <div className={'flex justify-center items-center flex-col text-end'}>
+                <h2 className={'text-md font-bold'}>Pierre Lasante</h2>
+                <span className={'text-[14px] w-full font-normal'}>Admin</span>
+              </div>
+              <img src="http://localhost:3000/images/admin.jpg"
+                   alt=""
+                  className={'w-[45px] h-[45px] rounded-full overflow-hidden'}/>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
