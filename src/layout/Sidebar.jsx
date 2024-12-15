@@ -34,11 +34,9 @@ const Sidebar = ({showSidebar, setShowSidebar}) => {
             {
               allNav.map((nav, index) => (
                 <li key={index}>
-                  <span>{console.log(nav.path)}</span>
-                  <span>{console.log(pathname)}</span>
                   <Link to={nav.path}
                         className={
-                          `${pathname.includes(nav.path)
+                          `${pathname === nav.path
                             ? 'bg-blue-600 shadow-indigo-500/50 text-white duration-500'
                             : 'text-[#030811] font-bold duration-200'}
                                                   px-[12px] py-[9px] rounded-sm flex justify-start items-center 
