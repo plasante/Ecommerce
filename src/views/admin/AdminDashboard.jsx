@@ -3,22 +3,23 @@ import {MdCurrencyExchange, MdProductionQuantityLimits} from "react-icons/md";
 import {FaUsers} from "react-icons/fa";
 import {FaCartShopping} from "react-icons/fa6";
 import Chart from 'react-apexcharts';
+import {Link} from "react-router-dom";
 
 const AdminDashboard = () => {
 
   const state = {
-    series : [
+    series: [
       {
         name: "Orders",
-        data: [23,34,45,56,67,78,89,98,56,33,99,90],
+        data: [23, 34, 45, 56, 67, 78, 89, 98, 56, 33, 99, 90],
       },
       {
         name: "Revenue",
-        data: [12,23,34,45,56,67,78,87,44,88,50,80],
+        data: [12, 23, 34, 45, 56, 67, 78, 87, 44, 88, 50, 80],
       },
       {
         name: "Sellers",
-        data: [55,23,88,45,56,99,78,82,23,44,1,70],
+        data: [55, 23, 88, 45, 56, 99, 78, 82, 23, 44, 1, 70],
       },
     ],
     options: {
@@ -41,25 +42,25 @@ const AdminDashboard = () => {
         width: .5,
         dashArray: 0,
       },
-      xaxis : {
-        categories : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      xaxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       },
-      legend : {
+      legend: {
         position: 'top'
       },
-      responsive : [
+      responsive: [
         {
           breakpoint: 565,
-          yaxis : {
-            categories : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          yaxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
           },
-          options : {
+          options: {
             plotOptions: {
               bar: {
-                horizontal : true,
+                horizontal: true,
               }
             },
-            chart : {
+            chart: {
               height: '550px'
             }
           }
@@ -91,7 +92,7 @@ const AdminDashboard = () => {
           bg-[#fae8e8]: This class applies a specific background color (bg) to the element.
           rounded-md: This class applies medium-sized border radius to the element, making the corners rounded.
           gap-3: this class applies a gap (spacing between child elements) of 0.75rem
-        */ }
+        */}
         <div className={'flex justify-between items-center p-5 bg-[#fae8e8] rounded-md gap-3'}>
           { /*
           flex: property to the element, which makes it a flex container
@@ -99,7 +100,7 @@ const AdminDashboard = () => {
           justify-start: In a flex container, this aligns the flex items along the vertical line
           items-start: Similar to justify-start, but it's used for alignment along the horizontal line of the container.
           text-[#5c5a5a]: This sets the color of the text inside the container to the hex value #5c5a5a.
-        */ }
+        */}
           <div className={'flex flex-col justify-start items-start text-[#5c5a5a]'}>
             <h2 className={'text-3xl font-bold'}>$3434</h2>
             <span className={'text-md font-medium'}>Total Sales</span>
@@ -161,6 +162,76 @@ const AdminDashboard = () => {
                    type={'bar'}
                    height={'350'}
             />
+          </div>
+        </div>
+        <div className={'w-full lg:w-5/12 lg:pl-4 mt-6 lg:mt-0'}>
+          <div className={'w-full bg-[#6a5fdf] p-4 rounded-md text-[#d0d2d6]'}>
+            <div className={'flex justify-between items-center'}>
+              <h2 className={'font-semibold text-lg text-[#d0d2d6] pb-3'}>
+                Recent Seller Message
+              </h2>
+              <Link className={'font-semibold text-sm text-[#d0d2d6]'}>
+                View All
+              </Link>
+            </div>
+          </div>
+          <div className={'flex flex-col gap-2 pt-6 text-[#d0d2d6]'}>
+            <ol className={'relative border-1 border-slate-600 ml-4'}>
+              <li className={'mb-3 ml-6'}>
+                <div className={'flex absolute -left-5 shadow-lg justify-center ' +
+                  'items-center w-10 h-10 p-[6px] bg-[#4c7fe2] rounded-full z-10'}>
+                  <img
+                    className={'w-full rounded-full h-full shadow-lg'}
+                    src="http://localhost:3000/images/admin.jpg"
+                    alt=""/>
+                </div>
+                <div className={'p-3 bg-slate-800 rounded-lg border border-slate-600 shadow-sm'}>
+                  <div className={'flex justify-between items-center mb-2'}>
+                    <Link className={'text-md font-normal'}>Admin</Link>
+                    <time className={'mb-1 text-sm font-normal sm:order-last sm:mb-0'}>2 days ago</time>
+                  </div>
+                  <div className={'p-2 text-xs font-normal bg-slate-700 rounded-lg border border-slate-800'}>
+                    How are you?
+                  </div>
+                </div>
+              </li>
+              <li className={'mb-3 ml-6'}>
+                <div className={'flex absolute -left-5 shadow-lg justify-center ' +
+                  'items-center w-10 h-10 p-[6px] bg-[#4c7fe2] rounded-full z-10'}>
+                  <img
+                    className={'w-full rounded-full h-full shadow-lg'}
+                    src="http://localhost:3000/images/admin.jpg"
+                    alt=""/>
+                </div>
+                <div className={'p-3 bg-slate-800 rounded-lg border border-slate-600 shadow-sm'}>
+                  <div className={'flex justify-between items-center mb-2'}>
+                    <Link className={'text-md font-normal'}>Admin</Link>
+                    <time className={'mb-1 text-sm font-normal sm:order-last sm:mb-0'}>2 days ago</time>
+                  </div>
+                  <div className={'p-2 text-xs font-normal bg-slate-700 rounded-lg border border-slate-800'}>
+                    How are you?
+                  </div>
+                </div>
+              </li>
+              <li className={'mb-3 ml-6'}>
+                <div className={'flex absolute -left-5 shadow-lg justify-center ' +
+                  'items-center w-10 h-10 p-[6px] bg-[#4c7fe2] rounded-full z-10'}>
+                  <img
+                    className={'w-full rounded-full h-full shadow-lg'}
+                    src="http://localhost:3000/images/admin.jpg"
+                    alt=""/>
+                </div>
+                <div className={'p-3 bg-slate-800 rounded-lg border border-slate-600 shadow-sm'}>
+                  <div className={'flex justify-between items-center mb-2'}>
+                    <Link className={'text-md font-normal'}>Admin</Link>
+                    <time className={'mb-1 text-sm font-normal sm:order-last sm:mb-0'}>2 days ago</time>
+                  </div>
+                  <div className={'p-2 text-xs font-normal bg-slate-700 rounded-lg border border-slate-800'}>
+                    How are you?
+                  </div>
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
       </div>
