@@ -2,8 +2,54 @@ import React from 'react';
 import {MdCurrencyExchange, MdProductionQuantityLimits} from "react-icons/md";
 import {FaUsers} from "react-icons/fa";
 import {FaCartShopping} from "react-icons/fa6";
+import Chart from 'react-apexcharts';
 
 const AdminDashboard = () => {
+
+  const state = {
+    series : [
+      {
+        name: "Orders",
+        data: [23,34,45,56,67,78,89,98,56,33,99,90],
+      },
+      {
+        name: "Revenue",
+        data: [12,23,34,45,56,67,78,87,44,88,50,80],
+      },
+      {
+        name: "Sellers",
+        data: [55,23,88,45,56,99,78,82,23,44,1,70],
+      },
+    ],
+    options: {
+      color: ['#181ee8', '#181ee8'],
+      plotOptions: {
+        radius: 30
+      },
+      chart: {
+        background: 'transparent',
+        foreColor: '#d0d2d6'
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        show: true,
+        curve: ['smooth', 'straight', 'stepline'],
+        lineCap: 'butt',
+        color: '#f0f0f0',
+        width: .5,
+        dashArray: 0,
+      },
+      xaxis : {
+        categories : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      },
+      legend : {
+        position: 'top'
+      }
+    }
+  }
+
   return (
     // px-2 : padding of 0.5rem on small screens
     // md:px-7 : 1.75rem on medium and larger screens
@@ -85,6 +131,18 @@ const AdminDashboard = () => {
           <div className={'w-[40px] h-[47px] rounded-full bg-[#0200f8] flex justify-center items-center text-xl'}>
             <FaCartShopping
               className={'text-[#fa8e8e] shadow-lg'}/>
+          </div>
+        </div>
+      </div>
+
+      <div className={'w-full flex flex-wrap mt-7'}>
+        <div className={'w-full lg:w-7/12 lg:pr-3'}>
+          <div className={'w-full bg-[#6a5fdf] p-4 rounded-md'}>
+            <Chart options={state.options}
+                   series={state.series}
+                   type={'bar'}
+                   height={'350'}
+            />
           </div>
         </div>
       </div>
