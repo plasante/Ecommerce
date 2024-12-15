@@ -256,20 +256,19 @@ const AdminDashboard = () => {
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td className={'py-3 px-4 font-medium whitespace-nowrap'}>#34344</td>
-              <td className={'py-3 px-4 font-medium whitespace-nowrap'}>$456</td>
-              <td className={'py-3 px-4 font-medium whitespace-nowrap'}>Pending</td>
-              <td className={'py-3 px-4 font-medium whitespace-nowrap'}>Pending</td>
-              <td className={'py-3 px-4 font-medium whitespace-nowrap'}>View</td>
-            </tr>
-            <tr>
-              <td className={'py-3 px-4 font-medium whitespace-nowrap'}>#34344</td>
-              <td className={'py-3 px-4 font-medium whitespace-nowrap'}>$456</td>
-              <td className={'py-3 px-4 font-medium whitespace-nowrap'}>Pending</td>
-              <td className={'py-3 px-4 font-medium whitespace-nowrap'}>Pending</td>
-              <td className={'py-3 px-4 font-medium whitespace-nowrap'}>View</td>
-            </tr>
+            {
+              [1,2,3,4,5].map((d, index) => {
+                return (
+                <tr key={index}>
+                  <td className={'py-3 px-4 font-medium whitespace-nowrap'}>#34344</td>
+                  <td className={'py-3 px-4 font-medium whitespace-nowrap'}>$456</td>
+                  <td className={'py-3 px-4 font-medium whitespace-nowrap'}>Pending</td>
+                  <td className={'py-3 px-4 font-medium whitespace-nowrap'}>Pending</td>
+                  <td className={'py-3 px-4 font-medium whitespace-nowrap'}><Link>View</Link></td>
+                </tr>
+                )
+              })
+            }
             </tbody>
           </table>
         </div>
